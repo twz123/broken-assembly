@@ -6,7 +6,10 @@ created by the [Maven Assembly Plugin][1]. They are somehow broken under
 certain circumstances, i.e. some directory entries are erroneously archived as
 file entries, which makes those files unextractable via the `jar x` command.
 
+I filed [MASSEMBLY-851][MASSEMBLY-851] for this.
+
 [1]: https://maven.apache.org/components/plugins/maven-assembly-plugin/
+[MASSEMBLY-851]: https://issues.apache.org/jira/browse/MASSEMBLY-851
 
 
 ## Verify the problem
