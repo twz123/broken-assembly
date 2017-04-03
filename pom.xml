@@ -50,7 +50,7 @@
                 </executions>
                 <configuration>
                     <environmentVariables>
-                        <BROKEN_ASSEMBLY_JAR>${project.build.directory}/${project.build.finalName}-broken.jar</BROKEN_ASSEMBLY_JAR>
+                        <BROKEN_ASSEMBLY_JAR>${project.build.directory}${file.separator}${project.build.finalName}-broken.jar</BROKEN_ASSEMBLY_JAR>
                     </environmentVariables>
                 </configuration>
             </plugin>
