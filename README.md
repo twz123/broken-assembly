@@ -8,6 +8,13 @@ file entries, which makes those files unextractable via the `jar x` command.
 
 I filed [MASSEMBLY-851][MASSEMBLY-851] for this.
 
+Apparently, this is an OS specific that's not reproducible on Windows. To
+verify this, I set up a Linux build on Travis CI and a Windows build on
+AppVeyor:
+
+[![Travis CI build status](https://travis-ci.org/twz123/broken-assembly.svg?branch=master)](https://travis-ci.org/twz123/broken-assembly)
+[![AppVeyor build status](http://ci.appveyor.com/api/projects/status/github/twz123/broken-assembly?svg=true)](https://ci.appveyor.com/project/twz123/broken-assembly)
+
 [1]: https://maven.apache.org/components/plugins/maven-assembly-plugin/
 [MASSEMBLY-851]: https://issues.apache.org/jira/browse/MASSEMBLY-851
 
