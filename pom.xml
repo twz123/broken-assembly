@@ -66,4 +66,58 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>fix-by-upgrading-jar-plugin</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+            </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-jar-plugin</artifactId>
+                            <version>${maven-jar-plugin.version}</version>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
+            <id>fix-by-upgrading-plexus-archiver</id>
+            <properties>
+                <plexus-archiver.version>2.1.1</plexus-archiver.version>
+            </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-jar-plugin</artifactId>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>org.codehaus.plexus</groupId>
+                                    <artifactId>plexus-archiver</artifactId>
+                                    <version>${plexus-archiver.version}</version>
+                                    <exclusions>
+                                        <exclusion>
+                                            <groupId>org.codehaus.plexus</groupId>
+                                            <artifactId>plexus-container-default</artifactId>
+                                        </exclusion>
+                                        <exclusion>
+                                            <groupId>org.codehaus.plexus</groupId>
+                                            <artifactId>plexus-component-api</artifactId>
+                                        </exclusion>
+                                    </exclusions>
+                                </dependency>
+                            </dependencies>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
